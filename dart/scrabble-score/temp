@@ -1,0 +1,132 @@
+// // Put your code here
+// // letters = 'Latte'
+// int score(String word) {
+//   // create the var, 'total', to hold the total, set it to 0
+//   int total = 0; 
+//   // for each score (1,2,3,4,5,8,10), define a list of letters
+//   // A, E, I, O, U, L, N, R, S, T       1
+//   List score1 = ['a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'];
+//   // D, G                               2
+//   List score2 = ['d', 'g'];
+//   // B, C, M, P                         3
+//   List score3 = ['b', 'c', 'm', 'p'];
+//   // F, H, V, W, Y                      4
+//   List score4 = ['f', 'h', 'v', 'w', 'y'];
+//   // K                                  5
+//   List score5 = ['k'];
+//   // J, X                               8
+//   List score8 = ['j','x'];
+//   // Q, Z                               10
+//   List score10 = ['q','z'];
+
+//   // convert word into list of letters
+//   List letters = word.toLowerCase().split('');
+//   // for each letter in letters 
+//   for (var l in letters){
+//      // add the score for that letter to the total
+//      if (score1.contains(l)){
+//       total += 1;
+//      } else if(score2.contains(l)){
+//       total += 2;
+//      } else if(score3.contains(l)){
+//       total += 3;
+//      } else if(score4.contains(l)){
+//       total += 4;
+//      } else if(score5.contains(l)){
+//       total += 5;
+//      } else if(score8.contains(l)){
+//       total += 8;
+//      } else if(score10.contains(l)){
+//       total += 10;
+//      } else{
+//       return total;
+//      }
+//   }
+//   // return total
+//   return total;
+// }
+
+
+// take any word, see which letters it contains, parse it into letters, make a for loop 
+  // that adds the score up
+// have a function that matches each letter in a word to an equivalent number
+  // have it return a variable that contains all the scores added up
+
+
+
+  //  We want to extract ages from the following string:
+  //   String word = ''
+
+  //   Declaring a RegExp object with a pattern that matches sequences of digits
+  //   RegExp reg1 = new RegExp(r'()');
+ 
+//  Iterating over the matches returned from allMatches
+//     Iterable allMatches = reg1.allMatches(str1);
+//     var matchCount = 0;
+//     allMatches.forEach((match) {
+//         matchCount += 1;
+//         print('Match ${matchCount}: ' + str1.substring(match.start, match.end));
+//     });
+
+
+// use regex to match all letters
+// TODO: make final?
+int score(String word) {
+
+  int total = 0; 
+
+  final RegExp regex = new RegExp (r'([a-zA-Z])');
+  final Iterable letters = regex.allMatches(word.toLowerCase());
+
+// function that assigns a number to each letter
+  int letterScore(String letter){
+    int score = 0;
+    switch(letter) {
+      case 'a' || 'e' || 'i' || 'o' || 'u' || 'l' || 'n' || 'r' || 's' || 't':
+        score = 1;
+        break;
+
+      case 'd' || 'g':
+        score = 2;
+        break;
+
+      case 'b' || 'c' || 'm' || 'p':
+        score = 3;
+        break;
+
+      case 'f' || 'h' || 'v' || 'w' || 'y':
+        score = 4;
+        break;
+
+      case 'k':
+        score = 5;
+        break;
+
+      case 'j' || 'x':
+        score = 8;
+        break;
+
+      case 'q' || 'z':
+        score = 10;
+    }
+    return score;
+  }
+
+
+  return total;
+}
+
+
+// function that returns a score
+
+
+
+// int score(String word) {
+//   for (final l in word.toLowerCase()){
+//     print (l);
+//   }
+
+  
+// }
+
+

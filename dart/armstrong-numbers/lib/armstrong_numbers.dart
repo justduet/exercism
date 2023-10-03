@@ -11,9 +11,8 @@ class ArmstrongNumbers {
     
     // for loop that parses each string digit into a number
     for (final String digit in digits){
-      BigInt bigint = BigInt.from(int.parse(digit));
       // raise each digit to the power equal to the number of digits
-      total += bigint.pow(noom.length); 
+      total += BigInt.parse(digit).pow(noom.length);
     }
 
     // compare the computed total to the original number

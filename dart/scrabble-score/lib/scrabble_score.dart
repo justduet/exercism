@@ -6,64 +6,43 @@ int score(String word) {
   final RegExp regex = new RegExp (r'([a-z])');
   final Iterable letters = regex.allMatches(word.toLowerCase());
 
+  Map<String, int> letterScoreMap = createLetterScoreMap();
+
   for (final l in letters){
     // pass the string part of the regex match into the letter score function
-    total += letterScore(l[0]);
+    total += letterScore(l[0] as String, letterScoreMap);
   }
 
   return total;
 }
 
-// function assigns a number to each letter
-int letterScore(String letter){
-  int score = 0;
+// return a score for a given letter
+int letterScore(String letter, Map<String, int> map){
+  // default to 1 for the most common letters
+  return map[letter] ?? 1;
+}
+
+Map<String, int> createLetterScoreMap(){
+  Map<String, int> map = {};
   
-  switch(letter) {
-    case 'a':
-    case 'e':
-    case 'i':
-    case 'o':
-    case 'u':
-    case 'l':
-    case 'n':
-    case 'r':
-    case 's':
-    case 't':
-      score = 1;
-      break;
+  map['d'] =
+  map['g'] = 2;
 
-    case 'd':
-    case 'g':
-      score = 2;
-      break;
-
-    case 'b':
-    case 'c':
-    case 'm':
-    case 'p':
-      score = 3;
-      break;
-
-    case 'f':
-    case 'h':
-    case 'v':
-    case 'w':
-    case 'y':
-      score = 4;
-      break;
-
-    case 'k':
-      score = 5;
-      break;
-
-    case 'j':
-    case 'x':
-      score = 8;
-      break;
-
-    case 'q':
-    case 'z':
-      score = 10;
+  for(String s in ['b', 'c', 'm', 'p']){
+    map[s] = 3;
   }
-  return score;
+
+  for(String s in ['f', 'h', 'v', 'w', 'y']){
+    map[s] = 4;
+  }
+
+  map['k'] = 5;
+
+  map['j'] =
+  map['x'] = 8;
+
+  map['q'] =
+  map['z'] = 10;
+
+  return map;
 }

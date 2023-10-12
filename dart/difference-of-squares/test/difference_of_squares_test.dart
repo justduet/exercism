@@ -20,7 +20,7 @@ void squareTheSumOfTheNumbersUpToTheGivenNumber() {
   test('square of sum 5', () {
     final result = differenceOfSquares.squareOfSum(5);
     expect(result, equals(225));
-  }, skip: true);
+  }, skip: false);
 
   test('square of sum 100', () {
     final result = differenceOfSquares.squareOfSum(100);
@@ -28,36 +28,36 @@ void squareTheSumOfTheNumbersUpToTheGivenNumber() {
   }, skip: true);
 }
 
-// void sumTheSquaresOfTheNumbersUpToTheGivenNumber() {
-//   test('sum of squares 1', () {
-//     final result = differenceOfSquares.sumOfSquares(1);
-//     expect(result, equals(1));
-//   }, skip: true);
+void sumTheSquaresOfTheNumbersUpToTheGivenNumber() {
+  test('sum of squares 1', () {
+    final result = differenceOfSquares.sumOfSquares(1);
+    expect(result, equals(1));
+  }, skip: true);
 
-//   test('sum of squares 5', () {
-//     final result = differenceOfSquares.sumOfSquares(5);
-//     expect(result, equals(55));
-//   }, skip: true);
+  test('sum of squares 5', () {
+    final result = differenceOfSquares.sumOfSquares(5);
+    expect(result, equals(55));
+  }, skip: true);
 
-//   test('sum of squares 100', () {
-//     final result = differenceOfSquares.sumOfSquares(100);
-//     expect(result, equals(338350));
-//   }, skip: true);
-// }
+  test('sum of squares 100', () {
+    final result = differenceOfSquares.sumOfSquares(100);
+    expect(result, equals(338350));
+  }, skip: true);
+}
 
-// void subtractSumOfSquaresFromSquareOfSums() {
-//   test('difference of squares 1', () {
-//     final result = differenceOfSquares.differenceOfSquares(1);
-//     expect(result, equals(0));
-//   }, skip: true);
+void subtractSumOfSquaresFromSquareOfSums() {
+  test('difference of squares 1', () {
+    final result = differenceOfSquares.differenceOfSquares(1);
+    expect(result, equals(0));
+  }, skip: true);
 
-//   test('difference of squares 5', () {
-//     final result = differenceOfSquares.differenceOfSquares(5);
-//     expect(result, equals(170));
-//   }, skip: true);
+  test('difference of squares 5', () {
+    final result = differenceOfSquares.differenceOfSquares(5);
+    expect(result, equals(170));
+  }, skip: true);
 
-//   test('difference of squares 100', () {
-//     final result = differenceOfSquares.differenceOfSquares(100);
-//     expect(result, equals(25164150));
-//   }, skip: true);
-// }
+  test('difference of squares 100', () {
+    final result = differenceOfSquares.differenceOfSquares(100);
+    expect(result, equals(25164150));
+  }, skip: true);
+}

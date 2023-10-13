@@ -1,38 +1,25 @@
 class HighScores{
   List <int> scores = [];
-  //int lastNumberadded 
-
 
   // define a constructor on the HighScores class
   // initialize the score list
-  HighScores(List<int> scores) {
-    this.scores = scores;
-  } 
+  HighScores(this.scores);
 
   // gets the biggest score
-  int personalBest(){
-    return topScores(1).last;
-  }
+  int get personalBest => topScores(1).last;
 
   // gets the top 3 scores
-  List <int> personalTopThree(){
-    return topScores(3);
-  }
+  List <int> get personalTopThree => topScores(3);
 
   // gets amount of top scores
-  List <int> topScores(int numberOfScores){
+  List <int> topScores(int count){
     
-    List <int> bestScores = scores.toList();
-    bestScores.sort(); // [0, 10, 20]
+    List <int> bestScores = scores.toList()..sort();
   
-    if (bestScores.length >= numberOfScores){
-      bestScores = bestScores.sublist(bestScores.length - numberOfScores, bestScores.length); 
-    }
-    return bestScores.reversed.toList(); 
+    // reverse, then get first count elements
+    return bestScores.reversed.take(count).toList();
   }
 
   // gets last added score back
-  int latest(){
-    return scores.last;   
-  }    
+  int get latest => scores.last;
 }

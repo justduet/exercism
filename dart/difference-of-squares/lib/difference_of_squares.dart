@@ -11,15 +11,13 @@ class DifferenceOfSquares {
         baseNum += i ;
     }
     int num1 = pow(baseNum, 2).toInt();
-    return num1;
-    
+     return num1;   
   }
 
   // calculate the sum of some squared numbers
   int sumOfSquares(int digit){
     int baseNum = 0;
     for( int i = digit; i >= 0; i-- ) { 
-       print (baseNum);
        baseNum += pow(i, 2).toInt();
     }
      return baseNum;

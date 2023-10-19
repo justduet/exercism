@@ -1,36 +1,21 @@
 class Hamming {
-  // calculate the differences between to equal strands of DNA
-  // if strands aren't equal in length, throw an error
-  // if equal and identical return 0
-  // if a == b return 0;
-  // if a != b
-
+  // define a method that takes 2 DNA strands and returns the # of differences
   int distance(String strandX, String strandY) {
-    int result = 999;
+    int differences = 0;
 
-    void throwsA(String mustEqual) {
-      if (strandX.length != strandY.length) {
-        String mustEqual = 'strands must be of equal length';
-        throwsA(mustEqual);
+    // throw an error if strands are not equal in length
+    if (strandX.length != strandY.length) {
+      throw ArgumentError('strands must be of equal length');
+    } else {
+      // iterate through both strands and count up the differences
+      for (int i = 0; i < strandX.length; i++) {
+        // if different, add 1
+        if (strandX[i] != strandY[i]) {
+          differences += 1;
+        }
       }
-   
     }
 
-    if (strandX == strandY)
-      result = 0;
-    else if (strandX.length != strandY) {
-     
-    }
-
-    return result;
+    return  differences;
   }
 }
-
-
-// void functionThatThrows() => throw SomeException();
-
-// void functionWithArgument(bool shouldThrow) {
-//   if (shouldThrow) {
-//     throw SomeException();
-//   }
-// }

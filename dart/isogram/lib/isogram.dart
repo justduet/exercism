@@ -15,7 +15,6 @@ class Isogram {
         for (int j = i + 1; j < letters.length; j++) {
           // do 2 different letters match?
           if(letters.elementAt(i)[0] == letters.elementAt(j)[0]){
-            print ('Oh no you are not an isogram');
             isIsogram = false;
           }
         }
@@ -25,14 +24,3 @@ class Isogram {
 
   }
 }
-
-// Examples of isograms:
-// lumberjacks
-// background
-// downstream
-// six-year-old
-
-// check if any characters appear twice (other than -)
-// if they do return false
-// counting and break out when you find a match
-// cut out all matches

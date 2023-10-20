@@ -6,7 +6,6 @@ class WordCount {
     //   '$
     //   _'
     //   '_ 
-
     script = script.replaceAll(new RegExp(r"^'|'$| '|' "), ' ');
 
     final words = script.toLowerCase().split(new RegExp(r"[^\w']+"));

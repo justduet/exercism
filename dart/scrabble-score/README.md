@@ -53,6 +53,7 @@ And to total:
 ### Contributed to by
 
 - @Stargator
+- @kytrinyx
 
 ### Based on
 

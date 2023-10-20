@@ -1,3 +1,9 @@
 ATTIC/
 .dart_tool/
 metadata.json
+build/
+pubspec.lock
+
+
+# Mac
+.DS_Store

@@ -13,14 +13,13 @@ class Bob{
       RegExp lowercasePattern = RegExp(r'[a-z]');
 
       // Find all uppercase and lowercase matches
-      //Iterable<Match> uppercaseMatches = uppercasePattern.allMatches(statement);
+      Iterable<Match> uppercaseMatches = uppercasePattern.allMatches(statement);
       Iterable<Match> lowercaseMatches = lowercasePattern.allMatches(statement);
 
       // all capital letters
       // capital letters with ?
       // capital letters with numbers
-      if(lowercaseMatches.length == 0 && RegExp(r'[A-Z]').allMatches(statement).length >= 1){
-
+      if(lowercaseMatches.length == 0 && uppercaseMatches.length >= 1){
         if(statement.endsWith('?'))
           result = 'Calm down, I know what I\'m doing!';
         else 

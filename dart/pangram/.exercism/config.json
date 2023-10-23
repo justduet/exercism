@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "kytrinyx"
+  ],
+  "files": {
+    "solution": [
+      "lib/pangram.dart"
+    ],
+    "test": [
+      "test/pangram_test.dart"
+    ],
+    "example": [
+      ".meta/lib/example.dart"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "kytrinyx"
+  ],
+  "files": {
+    "solution": [
+      "lib/nth_prime.dart"
+    ],
+    "test": [
+      "test/nth_prime_test.dart"
+    ],
+    "example": [
+      ".meta/lib/example.dart"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=7"
+}

@@ -1,33 +1,23 @@
+// new solution! based on, and thanks to...
+// https://exercism.org/tracks/dart/exercises/nth-prime/solutions/letmebelazy
 class NthPrime {
-  // if a number is only divisible by itself and by 1, it is a prime number
+  int prime(int num) {
+    if (num < 1) throw ArgumentError('There is no zeroth prime');
+    List<int> list = [2];
+    int primeCandidate = 3;
+    bool isPrime = true;
 
-  int prime(int primePosition) {
-    int numberOfPrimes = 1;
-    int lastPrimeWeFound = 2;
-    int primeCandidate = 2;
-
-    // Make sure 0th prime isn't being requested
-    if (primePosition < 1) throw ArgumentError('There is no zeroth prime');
-
-    // loop until numberOfPrimes == primePosition
-    MAIN:
-    while (numberOfPrimes < primePosition) {
-      // start from 2 because it is the first prime
-      primeCandidate++;
-
-      // test whether any numbers break the prime
-      for (int i = (primeCandidate / 2).floor(); i > 1; i--) {
-        if (primeCandidate % i == 0) {
-          continue MAIN;
+    while (list.length != num) {
+      isPrime = true;
+      for (int i = 0; i < list.length; i++) {
+        if (primeCandidate % list[i] == 0) {
+          isPrime = false;
+          break;
         }
       }
-      numberOfPrimes++;
-      lastPrimeWeFound = primeCandidate;
+      if (isPrime) list.add(primeCandidate);
+      primeCandidate++;
     }
-    return lastPrimeWeFound;
+    return list.last;
   }
-
-  // bool tester(int primeCandidate, int testNum) {
-  //   return (primeCandidate != testNum && primeCandidate % testNum == 0);
-  // }
 }

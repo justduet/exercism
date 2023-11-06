@@ -7,10 +7,6 @@ class RnaTranscription {
   };
   // convert each dna nucleotide into rna
   String toRna(String dna) {
-    String rna = '';
-    for (int i = 0; i < dna.length; i++) {
-      rna += MAP[dna[i]]!;
-    }
-    return rna;
+    return dna.split('').map((l) => MAP[l]).join();
   }
 }

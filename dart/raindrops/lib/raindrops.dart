@@ -1,14 +1,17 @@
 class Raindrops {
   // convert numbers to raindrop sounds based on their factors
   String convert(int testNum) {
-    String rainSound = '';
+    String rainSounds = '';
 
-    if (testNum % 3 == 0) rainSound += 'Pling';
-    if (testNum % 5 == 0) rainSound += 'Plang';
-    if (testNum % 7 == 0) rainSound += 'Plong';
+    rainSounds += rainTest(testNum, 3, 'Pling');
+    rainSounds += rainTest(testNum, 5, 'Plang');
+    rainSounds += rainTest(testNum, 7, 'Plong');
 
-    if ('' == rainSound) rainSound = testNum.toString();
+    return ('' == rainSounds) ? testNum.toString() : rainSounds;
+  }
 
-    return rainSound;
+  String rainTest(int testNum, int factor, String rainSound) {
+    // if testNum divides evenly by factor, return rainSound
+    return (testNum % factor == 0) ? rainSound : '';
   }
 }

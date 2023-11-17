@@ -1,0 +1,80 @@
+class Minesweeper {
+  //take a list of strings
+  //give back a list of strings
+  //construct a board
+  List<String> _grid;
+
+  Minesweeper(this._grid);
+
+  List<String> get annotated {
+    List<String> annotatedGrid = [];
+
+    // loop through the rows
+    for (int y = 0; y < _grid.length; y++) {
+      annotatedGrid.add('');
+
+      // loop through each position
+      for (int x = 0; x < _grid[0].length; x++) {
+        int mineCount = checkSurroundings(x, y);
+
+          if (0 != mineCount) {
+            annotatedGrid[y] += '$mineCount';
+          } else {
+            annotatedGrid[y] += ' ';
+          }
+        } else {
+          annotatedGrid[y] += '*';
+        }
+      }
+    }
+    // '   ',
+    // ' * ',
+    // '   '
+
+    // '111',
+    // '1*1',
+    // '111'
+
+    // for each position
+    // check whether or not it's a mine
+    // if it's not a mine
+    // check previous string
+    //  position - 1
+    //  position
+    //  position + 1
+
+    return annotatedGrid;
+  }
+
+  // method that checks (x, y) to se whether it is a mine
+  bool isPositionMine(int x, int y) {
+    bool foundMine = true;
+    // if it's off the grid return false
+    if (x < 0 || y < 0 || x >= _grid[0].length || y >= _grid.length)
+      foundMine = false;
+    // check if the position is a mine
+    else if (_grid[y][x] != '*') foundMine = false;
+
+    return foundMine;
+  }
+
+  // loop through all relative positions and
+  // check whether they contain a mine
+  int checkSurroundings(int x, int y) {
+    int mineCount = 0;
+    for (int relY = -1; relY <= 1; relY++) {
+      for (int relX = -1; relX <= 1; relX++) {
+        // ignore ourselves, (0,0)
+        if (0 == relX && 0 == relY) {
+        } else {
+          // add 1 if mine is found in relative location
+          if (this.isPositionMine(x + relX, y + relY)) {
+            mineCount++;
+          }
+        }
+      }
+    }
+    return mineCount;
+  }
+}
+
